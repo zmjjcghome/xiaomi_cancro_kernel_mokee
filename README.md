@@ -1,0 +1,2 @@
+# xiaomi_cancro_kernel_mokee
+build xiaomi_cancro_kernel_mokee
