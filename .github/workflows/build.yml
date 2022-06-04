@@ -92,6 +92,7 @@ jobs:
           export ARCH=arm
           export PATH="$(pwd)/arm-linux-androideabi-4.9/bin:${PATH}"
           cd android_kernel_xiaomi_cancro-mkn-mr1
+          sed -i 's#<smd_private.h>#"smd_private.h"#g' ./arch/arm/mach-msm/smd_init_dt.c
           make mokee_cancro_defconfig
           cp ../cancro-kernel.config ./.config
           make -j1 V=s
