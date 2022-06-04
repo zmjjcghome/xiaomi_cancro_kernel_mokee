@@ -73,7 +73,6 @@ jobs:
           git clone $REPO_URL -b $REPO_BRANCH lede
           git submodule update --init --recursive
           git submodule foreach git checkout master
-          ls -lh zmjjcg
           wget https://snapshots.linaro.org/gnu-toolchain/12.0-2022.02-1/arm-linux-gnueabihf/gcc-linaro-12.0.1-2022.02-x86_64_arm-linux-gnueabihf.tar.xz
           wget https://github.com/MoKee/android_kernel_xiaomi_cancro/archive/refs/heads/mkn-mr1.zip
           unzip mkn-mr1.zip
