@@ -30,7 +30,7 @@ env:
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: true
   UPLOAD_ARTIFACT: false
-  SSH_ACTIONS: false
+  SSH_ACTIONS: true
   BUILD_ALL: true
   FILETARNAME: cancro-mokee-kernel.tar.gz
   TZ: Asia/Shanghai
@@ -99,6 +99,9 @@ jobs:
           make mokee_cancro_defconfig
           cp ../cancro-kernel.config ./.config
           make -j1 V=s
+          cp ../buildBootimg.sh ./
+          chmod +x ./buildBootimg.sh
+          ./buildBootimg.sh
           df -h
           
       - name: Compress tar file
