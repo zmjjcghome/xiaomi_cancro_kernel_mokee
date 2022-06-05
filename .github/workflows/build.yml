@@ -94,6 +94,7 @@ jobs:
           cd android_kernel_xiaomi_cancro-mkn-mr1
           sed -i 's#<smd_private.h>#"smd_private.h"#g' ./arch/arm/mach-msm/smd_init_dt.c
           sed -i 's#include <\(.*\)>#include "\1"#g' ./drivers/tspdrv/tspdrv.c
+          sed -i 's#EXTRA_CFLAGS += -I$(M)#EXTRA_CFLAGS += -I$(shell pwd)#g' ./drivers/tspdrv/Makefile
           make mokee_cancro_defconfig
           cp ../cancro-kernel.config ./.config
           make -j1 V=s
