@@ -2,7 +2,7 @@
 cd arch/arm/boot
 git clone https://github.com/JonasCardoso/AnyKernel3.git
 
-cp zImage-dtb AnyKernel3/zImage
+cp zImage AnyKernel3/zImage
 
 zipdirout="AnyKernel3"
 maintainer="jcg"
@@ -18,6 +18,8 @@ ToolchainName="GCC"
 romversion="MK"
 androidversion="NINE"
 customkernel="nfsCifsKernel"
+zipfile="${customkernel}-${name}-${variant}-${release}-${ToolchainName}-${androidversion}-${romversion}.zip"
+
 echo "maintainer=${maintainer}" >> ${zipdirout}/device.prop
 echo "customkernel=${customkernel}" >> ${zipdirout}/device.prop
 echo "name=${name}" >> ${zipdirout}/device.prop
